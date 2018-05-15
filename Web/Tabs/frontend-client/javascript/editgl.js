@@ -4,18 +4,22 @@
 var editConfig = {
     content: [{
         type: 'row',
+        title: 'Edit Area',
         content:[{
             type: 'component',
+            title: 'Input',
             componentName: 'testComponent',
             componentState: { label: 'A' }
         },{
             type: 'column',
             content:[{
                 type: 'component',
+                title: 'Output 1',
                 componentName: 'testComponent',
                 componentState: { label: 'B' }
             },{
                 type: 'component',
+                title: 'Output 2',
                 componentName: 'testComponent',
                 componentState: { label: 'C' }
             }]
@@ -26,30 +30,19 @@ var editConfig = {
 /*
   Create GoldenLayout. Place it in the edit area of the page content.
 */
-var myLayout = new GoldenLayout(editConfig, document.getElementById("edit"));
+var editLayout = new GoldenLayout(editConfig, document.getElementById("edit"));
 
 /*
   Initialize component state.
 */
-myLayout.registerComponent(
+editLayout.registerComponent(
     'testComponent',
     function(container, componentState ) {
         container.getElement().html('<h2 style="text-align:center">'
                                     + componentState.label + '</h2>');
     });
-$(document).ready(function () {
-
 
 /*
   Start up GoldenLayout.
 */
-myLayout.init();
-
-myLayout.on("initialised", function() {
-    window.setTimeout(function() {
-    console.log("tree layout initialized");
-    myLayout.updateSize();
-    }, 1000);
-});
-
-});
+editLayout.init();

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
   <head>
@@ -41,31 +42,21 @@
       rel="stylesheet"
       href="https://golden-layout.com/assets/css/goldenlayout-dark-theme.css" />
 
-    <!--
-        Load script to hide/show the side div (contains the tree view).
-      -->
-    <script src="javascript/hide-tree.js"></script>
-
-    <!--
-        Styling.
-      -->
-    <link rel="stylesheet" href="stylesheet/layout.css">
-    <link rel="stylesheet" href="stylesheet/navbar.css">
+    <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/marquee.css">
-    <link rel="stylesheet" href="stylesheet/content.css">
-    <link rel="stylesheet" href="stylesheet/footer.css">
-
   </head>
 
   <body>
-
     <!--
-        Page container.
+        Note: I write css selectors in order of increasing specficity:
+              1) element (tag name), 2) class and 3) ID.
+              For example: <div class="tree" id="tree">.
       -->
+
     <div class="pagebox">
 
       <!--
-          Header
+          Navigation bar.
         -->
       <div class="navbar">
         <table class="header">
@@ -74,7 +65,7 @@
               <a href="#" class="left">Home</a>
               <a href="#" class="left">About</a>
               <a href="#" class="left">Help</a>
-              <a id="mylink" href="#" class="left">Tree</a>
+              <a class="left" id="mylink" href="#">Tree</a>
             </td>
             <td class="message">
               <div class="scroll-left">
@@ -82,27 +73,42 @@
               </div>
             </td>
             <td class="right">
-              <a href="#" class="right">Register</a>
-              <a href="#" class="right">Login</a>
+              <a class="right" href="#">Register</a>
+              <a class="right" href="#">Login</a>
             </td>
           </tr>
         </table>
-      </div> <!-- Header -->
+      </div> <!-- Navigation bar -- >
 
       <!--
-          Page contents
+          Page contents.
+          Note: Putting two GoldenLayout objects next to each other causes
+                them to not completely fill the horizontal area.
+                (Perhaps, they inherit the flex property from the parent div?)
         -->
-      <div class="box">
-        <!-- GoldenLayout "tree" container is placed inside here. -->
-        <div class="side" id="tree"></div>
-        <!-- GoldenLayout "edit" container is placed inside here. -->
-        <div class="main" id="edit"></div>
-      </div> <!-- Page contents -->
+      <div class="contentbox">
+           <!--
+        <table class="test">
+          <tr>
+            <td>
+              <div class="test-tree" id="tree"></div>
+            </td>
+            <td>
+              <div class="test-edit" id="edit"></div>
+            </td>
+          <tr>
+        </table>
+             -->
+        <div class="tree" id="tree"></div>
+        <div class="edit" id="edit"></div>
+        <script src="javascript/treegl.js"></script>
+        <script src="javascript/editgl.js"></script>
+      </div> <!-- Page contents -- >
 
       <!--
-          Footer
+          Status bar.
         -->
-      <div class="footer">
+      <div class="statusbar">
         <table class="header">
           <tr>
             <td class="left">
@@ -111,17 +117,12 @@
             <td class="right">
               Powered by: Ace, GoldenLayout
             </td>
-          </tr>
+          </Tr>
         </table>
-      </div> <!-- Footer -->
+      </div> <!-- Status bar -->
 
-    </div> <!-- Page container. -->
 
-    <!-- Load tree view goldenlayout -->
-    <script src="javascript/tree.js"></script>
-
-    <!-- Load edit area goldenlayout -->
-    <script src="javascript/edit.js"></script>
+    </div>
 
   </body>
 
