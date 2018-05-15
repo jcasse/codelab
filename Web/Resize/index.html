@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+    -->
+
+    <!--
+        Get jQuery. GoldenLayout needs it.
+      -->
+      <!--src="http://code.jquery.com/jquery-1.11.1.min.js">-->
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+
+    <!--
+        Add GoldenLayout.
+      -->
+    <script
+      type="text/javascript"
+      src="https://golden-layout.com/assets/js/goldenlayout.min.js">
+    </script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://golden-layout.com/assets/css/goldenlayout-base.css" />
+    <!--
+        Set GoldenLayout theme.
+        We break up the long link address into multiple lines by using line
+        breaks and tabs to indent (cannot use spaces to indent).
+      -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://golden-layout.com/assets/css/goldenlayout-dark-theme.css" />
+
+    <!--
+      Website.
+    -->
+    <link type="text/css" rel="stylesheet" href="stylesheet/index.css" />
+  </head>
+  <body>
+    <!-- Page container. -->
+    <div class="pagebox">
+
+      <!-- Header -->
+      <div class="navbar">
+        <table class="header">
+          <tr>
+            <td class="left">
+              <a href="#" class="left">Home</a>
+              <a href="#" class="left">About</a>
+              <a href="#" class="left">Help</a>
+            </td>
+            <td class="message">
+              <div class="scroll-left">
+                <p>Alerts go here... Details in Message Log....</p>
+              </div>
+            </td>
+            <td class="right">
+              <a href="#" class="right">Register</a>
+              <a href="#" class="right">Login</a>
+            </td>
+          </tr>
+        </table>
+      </div> <!-- Header -->
+
+
+    <div class="wrapper">
+      <div class="box" id="tree"></div>
+      <div class="handler"></div>
+      <div class="box" id="edit"></div>
+    </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <table class="header">
+          <tr>
+            <td class="left">
+              Perfecta Web IDE Version 1.0.0 (C) Beyond Limits, Inc.
+            </td>
+            <td class="right">
+              Powered by: Ace, GoldenLayout
+            </td>
+          </tr>
+        </table>
+      </div> <!-- Footer -->
+
+    </div> <!-- Page container. -->
+
+    <!-- Load resize code. -->
+    <script type="text/javascript" src="javascript/index.js"></script>
+
+    <!-- Load tree view goldenlayout -->
+    <script src="javascript/tree.js"></script>
+
+    <!-- Load edit area goldenlayout -->
+    <script src="javascript/edit.js"></script>
+
+  </body>
+</html>

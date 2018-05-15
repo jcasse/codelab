@@ -1,0 +1,7 @@
+# Recursively igonre:
+#   OS X folder information file
+**/.DS_Store
+#   Vim temporary files
+**/.*.swp
+#   Emacs temporary files
+**/.#*

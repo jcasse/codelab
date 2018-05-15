@@ -1,0 +1,208 @@
+/*
+  Page theme.
+*/
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:green;
+    height: 100%;
+    margin: 0;
+}
+
+/*
+  Page container. It flexes vertically to fill the window.
+*/
+.pagebox {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
+/*
+  Navigation bar. It does not flex. It can grow to accommodate its contents.
+*/
+.pagebox .navbar {
+  flex: 0 1 auto;
+  /* The above is shorthand for:
+  flex-grow: 0,
+  flex-shrink: 1,
+  flex-basis: auto
+  */
+}
+
+/*
+  Content section. Fills the remaining space, after navbar and footer.
+*/
+.pagebox .content {
+  flex: 1 1 auto;
+}
+
+/*
+  Footer. Has a height of 20px and does not grow.
+*/
+.pagebox .footer {
+  flex: 0 1 20px;
+}
+
+.pagebox .wrapper {
+  flex: 1 1 auto;
+  background-color: #fff;
+  color: #444;
+  /* Use flexbox */
+  display: flex;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  padding: 5px;
+
+  /* Use box-sizing so that element's outerwidth will match width property */
+  box-sizing: border-box;
+
+  /* Allow box to grow and shrink, and ensure they are all equally sized */
+  flex: 1 1 auto;
+}
+
+.handler {
+  width: 20px;
+  padding: 0;
+  cursor: ew-resize;
+  flex: 0 0 auto;
+}
+
+.handler::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 100%;
+  background: red;
+  margin: 0 auto;
+}
+
+/*
+  Navigation bar. Sits at the top of the page.
+*/
+:root {
+  --marquee-text-color: brown;
+}
+
+.navbar {
+    overflow: hidden; /* Hide overflow */
+    background-color: #333; /* Dark background color */
+    /*padding: 20px; /* Add some padding */
+}
+
+/*
+  Style the navigation bar links.
+*/
+.navbar a {
+    float: left; /* Make sure that the links stay side-by-side */
+    display: block; /* Change the display to block, for responsive reasons
+                       (see below) */
+    color: white; /* White text color */
+    text-align: center; /* Center the text */
+    padding: 14px 20px; /* Add some padding */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Left-aligned link. */
+.navbar a.left {
+    float: left; /* Float a link to the left */
+}
+
+/* Center-aligned link. */
+.navbar a.center {
+    float: center; /* Float a link to the center */
+}
+
+/* Right-aligned link. */
+.navbar a.right {
+    float: right; /* Float a link to the right */
+}
+
+/* Change color on hover/mouse-over. */
+.navbar a:hover {
+    background-color: #ddd; /* Grey background color */
+    color: black; /* Black text color */
+}
+
+table.header {
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+td {
+    /*border: 1px solid black;*/
+    valign: middle;
+}
+
+td.left {
+    width: 30%;
+    text-align: left;
+}
+
+td.message {
+    width: 40%;
+    text-align: center;
+    font-size: 30px;
+}
+
+td.right {
+    width: 30%;
+    text-align: right;
+}
+
+/*
+  Scrolling Text
+  Adapted from:
+      http://www.html.am
+      /html-codes/marquees/css-scrolling-text.cfm
+  Reference:
+      https://developer.mozilla.org
+      /en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+*/
+:root {
+  --text-color: brown;
+}
+
+.scroll-left {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    color: var(--text-color);
+}
+
+.scroll-left p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    transform: translateX(100%);
+    /* Apply animation to this element */
+    animation: scroll-left 5s linear infinite;
+}
+
+/* Move it (define the animation) */
+@keyframes scroll-left {
+    0%   {
+        transform: translateX(60%);
+        /*transform: translateX(var(--marquee-window-size));*/
+    }
+    100% {
+        transform: translateX(-60%);
+        /*transform: translateX(-var(--marquee-window-size));*/
+    }
+}
+
+/*
+  Footer. Sits at the bottom of the page.
+*/
+.footer {
+    padding: 2px;
+    text-align: left;
+    background: #ddd;
+    font-size: 11px;
+}

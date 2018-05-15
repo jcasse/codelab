@@ -1,0 +1,30 @@
+/*
+  Container for the content section. It stretches horizontally.
+*/
+/*
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+*/
+
+/*
+  Create two unequal columns that sit next to each other.
+  Note: flex must sum to 100%.
+*/
+
+/* Sidebar/left (tree view) area. */
+.side {
+    /*flex: 20%; /* Set the width of the sidebar */
+    flex: 1 1 auto; /* Set the width of the sidebar */
+    background-color: yellow; /* Grey background color */
+    padding: 5px; /* Some padding */
+}
+
+/* Main (editor) area. */
+.main {
+    /*flex: 80%; /* Set the width of the main content */
+    flex: 4 1 auto; /* Set the width of the sidebar */
+    background-color: blue; /* White background color */
+    padding: 5px; /* Some padding */
+}
