@@ -95,15 +95,28 @@
         <script src="javascript/editgl.js"></script>
       </div>
         -->
+
+      <!--
+          NOTE:
+          If set the width of the table to 100%, the GoldenLayout does not fill
+          the width. GoldenLayout is calculating some width.
+          If I set a specific width for the table, then GoldenLayout calculates
+          the correct width.
+        -->
+      <!--<table style="border: 1px solid black; width: 100%;">-->
       <table style="border: 1px solid black;">
         <tr>
           <td style="border: 1px solid black;" id="hideme">
-        <div style="height: 600px; width: 300px;" id="treeid"></div>
-        <script src="javascript/treegl.js"></script>
+
+            <div style="height: 600px; width: 300px;" id="treeid"></div>
+            <script src="javascript/treegl.js"></script>
+
           </td>
           <td style="border: 1px solid black;">
-        <div style="height: 600px; width: 1000px;" class="edit" id="editid"></div>
-        <script src="javascript/editgl.js"></script>
+
+            <div style="height: 600px; width: 1000px;" class="edit" id="editid"></div>
+            <script src="javascript/editgl.js"></script>
+
           </td>
         </tr>
       </table>
