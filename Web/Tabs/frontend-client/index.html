@@ -42,6 +42,7 @@
       rel="stylesheet"
       href="https://golden-layout.com/assets/css/goldenlayout-dark-theme.css" />
 
+    <script src="javascript/hide-tree.js"></script>
     <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/marquee.css">
   </head>
@@ -86,24 +87,26 @@
                 them to not completely fill the horizontal area.
                 (Perhaps, they inherit the flex property from the parent div?)
         -->
+      <!--
       <div class="contentbox">
-           <!--
-        <table class="test">
-          <tr>
-            <td>
-              <div class="test-tree" id="tree"></div>
-            </td>
-            <td>
-              <div class="test-edit" id="edit"></div>
-            </td>
-          <tr>
-        </table>
-             -->
-        <div class="tree" id="tree"></div>
-        <div class="edit" id="edit"></div>
+        <div class="tree" id="treeid"></div>
+        <div class="edit" id="editid"></div>
         <script src="javascript/treegl.js"></script>
         <script src="javascript/editgl.js"></script>
-      </div> <!-- Page contents -- >
+      </div>
+        -->
+      <table style="border: 1px solid black;">
+        <tr>
+          <td style="border: 1px solid black;" id="hideme">
+        <div style="height: 600px; width: 300px;" id="treeid"></div>
+        <script src="javascript/treegl.js"></script>
+          </td>
+          <td style="border: 1px solid black;">
+        <div style="height: 600px; width: 1000px;" class="edit" id="editid"></div>
+        <script src="javascript/editgl.js"></script>
+          </td>
+        </tr>
+      </table>
 
       <!--
           Status bar.

@@ -17,7 +17,7 @@ var treeConfig = {
 /*
   Create GoldenLayout. Place it in the edit area of the page content.
 */
-var treeLayout = new GoldenLayout(treeConfig, document.getElementById("tree"));
+var treeLayout = new GoldenLayout(treeConfig, document.getElementById("treeid"));
 
 /*
   Initialize component state.

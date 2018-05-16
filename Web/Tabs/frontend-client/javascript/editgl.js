@@ -30,7 +30,7 @@ var editConfig = {
 /*
   Create GoldenLayout. Place it in the edit area of the page content.
 */
-var editLayout = new GoldenLayout(editConfig, document.getElementById("edit"));
+var editLayout = new GoldenLayout(editConfig, document.getElementById("editid"));
 
 /*
   Initialize component state.
