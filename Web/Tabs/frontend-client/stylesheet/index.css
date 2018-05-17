@@ -1,31 +1,15 @@
-/*
-  Page theme.
-*/
 html, body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: green;
-    height: 100%;
-    margin: 0;
+    height: 100%; /* Required for table to fill height */
 }
 
-/*
-  Page container. It stacks the objects on the page vertically.
-*/
-body > .pagebox {
-  display: flex;
-  flex-flow: column nowrap;
-  height: 100%;
+#navbar {
+    border: 1px solid black;
+    width: 100%;
+    height: 7%;
 }
 
-/*
-  Navigation bar. Sits at the top of the page. Allows the user to navigate
-  through the website and displays alerts.
-*/
-.pagebox > .navbar {
-  flex: 0 1 auto; /* same as flex-grow: 0; flex-shrink: 1; flex-basis: auto; */
-  overflow: hidden; /* Hide overflow */
-  background-color: #333; /* Dark background color */
-  /*padding: 20px; /* debug */
+#navbar td {
+    border: 1px solid black;
 }
 
 /* Style the navigation bar links. */
@@ -33,7 +17,6 @@ body > .pagebox {
     float: left; /* Make sure that the links stay side-by-side */
     display: block; /* Change the display to block, for responsive reasons
                        (see below) */
-    color: white; /* White text color */
     text-align: center; /* Center the text */
     padding: 14px 20px; /* top and bottom: 14px; left and right: 20px; */
     text-decoration: none; /* Remove underline */
@@ -55,68 +38,40 @@ body > .pagebox {
     color: black; /* Black text color */
 }
 
-/*
-  Content section. Fills the remaining space, between navbar and footer.
-  Contains the contents of the page as other objects stacked horizontally.
-*/
-.pagebox > .contentbox {
-  flex: 1 1 auto; /* same as flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
-  display: flex;
-  flex-flow: row nowrap;
-  background: red;
-  padding: 5px;
-}
 
-/* File tree view area. Sits inside the content box on the left. */
-.contentbox > .tree {
-    flex: 1 1 auto; /* Set the width of the sidebar */
-    background-color: yellow; /* Grey background color */
-    padding: 5px;
-}
-
-/* Editor area. Sits inside the content box on the right. */
-.contentbox > .edit {
-    flex: 4 1 auto; /* Set the width of the sidebar */
-    background-color: blue; /* White background color */
-    padding: 5px;
-}
-
-/*
-  Status bar. Sits at the bottom of the page.
-*/
-.pagebox > .statusbar {
-  flex: 0 1 20px; /* same as flex-grow: 0; flex-shrink: 1; flex-basis: 20px; */
-}
-
-.pagebox > .statusbar {
-    text-align: left;
-    background: #ddd;
-    font-size: 11px;
-    padding: 2px;
-}
-
-table.header {
+#content {
+    border: 1px solid black;
     width: 100%;
-    /*border: 1px solid black; /* debug */
+    height: 90%;
+    table-layout: fixed;
 }
 
-td {
-    valign: middle;
-    /*border: 1px solid black;/* debug */
+#content #sidetab {
+    border: 1px solid black;
+    width: 1%;
 }
 
-td.left {
-    width: 30%;
-    text-align: left;
+#sidetab div {
+    transform: rotate(-90.0deg);
+    border: 1px solid black;
 }
 
-td.message {
-    width: 40%;
-    text-align: center;
-    font-size: 30px;
+#content #treeid {
+    border: 1px solid black;
+    width: 19%;
 }
 
-td.right {
-    width: 30%;
-    text-align: right;
+#content #editid {
+    border: 1px solid black;
+    width: 80%;
+}
+
+#statusbar {
+    border: 1px solid black;
+    width: 100%;
+    height: 3%;
+}
+
+#statusbar td {
+    border: 1px solid black;
 }

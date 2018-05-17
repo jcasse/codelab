@@ -44,101 +44,52 @@
 
     <script src="javascript/hide-tree.js"></script>
     <link rel="stylesheet" href="stylesheet/index.css">
-    <link rel="stylesheet" href="stylesheet/marquee.css">
   </head>
 
   <body>
-    <!--
-        Note: I write css selectors in order of increasing specficity:
-              1) element (tag name), 2) class and 3) ID.
-              For example: <div class="tree" id="tree">.
-      -->
 
-    <div class="pagebox">
+    <table id="navbar">
+      <tr>
+        <td>
+          <a id="hidetree" href="#">Tree</a>
+        </td>
+        <td>
+          Alert
+        </td>
+        <td>
+          Login
+        </td>
+      </tr>
+    </table>
 
-      <!--
-          Navigation bar.
-        -->
-      <div class="navbar">
-        <table class="header">
-          <tr>
-            <td class="left">
-              <a href="#" class="left">Home</a>
-              <a href="#" class="left">About</a>
-              <a href="#" class="left">Help</a>
-              <a class="left" id="mylink" href="#">Tree</a>
-            </td>
-            <td class="message">
-              <div class="scroll-left">
-                <p>Alerts go here... Details in Message Log...</p>
-              </div>
-            </td>
-            <td class="right">
-              <a class="right" href="#">Register</a>
-              <a class="right" href="#">Login</a>
-            </td>
-          </tr>
-        </table>
-      </div> <!-- Navigation bar -- >
+    <table id="content">
+      <tr>
+        <td id="sidetab">
+          <!--
+          <div>
+          <a id="hidetree" href="#">Tree</a>
+          </div>
+          -->
+        </td>
+        <td id="treeid">
+          <script src="javascript/treegl.js"></script>
+        </td>
+        <td id="editid">
+          <script src="javascript/editgl.js"></script>
+        </td>
+      </tr>
+    </table>
 
-      <!--
-          Page contents.
-          Note: Putting two GoldenLayout objects next to each other causes
-                them to not completely fill the horizontal area.
-                (Perhaps, they inherit the flex property from the parent div?)
-        -->
-      <!--
-      <div class="contentbox">
-        <div class="tree" id="treeid"></div>
-        <div class="edit" id="editid"></div>
-        <script src="javascript/treegl.js"></script>
-        <script src="javascript/editgl.js"></script>
-      </div>
-        -->
-
-      <!--
-          NOTE:
-          If set the width of the table to 100%, the GoldenLayout does not fill
-          the width. GoldenLayout is calculating some width.
-          If I set a specific width for the table, then GoldenLayout calculates
-          the correct width.
-        -->
-      <!--<table style="border: 1px solid black; width: 100%;">-->
-      <table style="border: 1px solid black;">
-        <tr>
-          <td style="border: 1px solid black;" id="hideme">
-
-            <div style="height: 600px; width: 300px;" id="treeid"></div>
-            <script src="javascript/treegl.js"></script>
-
-          </td>
-          <td style="border: 1px solid black;">
-
-            <div style="height: 600px; width: 1000px;" class="edit" id="editid"></div>
-            <script src="javascript/editgl.js"></script>
-
-          </td>
-        </tr>
-      </table>
-
-      <!--
-          Status bar.
-        -->
-      <div class="statusbar">
-        <table class="header">
-          <tr>
-            <td class="left">
-              Perfecta Web IDE Version 1.0.0 (C) Beyond Limits, Inc.
-            </td>
-            <td class="right">
-              Powered by: Ace, GoldenLayout
-            </td>
-          </Tr>
-        </table>
-      </div> <!-- Status bar -->
-
-
-    </div>
+    <table id="statusbar">
+      <tr>
+        <td>
+          Perfecta Web IDE Version 1.0.0 (C) Beyond Limits, Inc.
+        </td>
+        <td>
+          Powered by: Ace, GoldenLayout, FancyTree, VisJS
+        </td>
+      </tr>
+    </table>
 
   </body>
 
