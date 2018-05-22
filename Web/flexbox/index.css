@@ -1,0 +1,57 @@
+html,
+body {
+  height: 100%;
+  margin: 0
+}
+
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.box .line {
+  border: 1px dotted grey;
+}
+
+.box .line.header {
+  flex: 0 1 auto;
+  /* The above is shorthand for:
+  flex-grow: 0,
+  flex-shrink: 1,
+  flex-basis: auto
+  */
+}
+
+.box .line.content {
+  flex: 1 1 auto;
+}
+
+.box .line.footer {
+  flex: 0 1 40px;
+}
+
+/* Column container. */
+.row {
+    display: flex;
+    flex-flow: row;
+    flex: 1 1 auto;
+}
+
+/* Create two unequal columns that sit next to each other. */
+/* Note: flex must sum to 100%. */
+
+/* Sidebar/left column. */
+.row .side {
+    flex: 20%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding: 15px; /* Some padding */
+}
+
+/* Main column. */
+.row .main {
+    flex: 80%; /* Set the width of the main content */
+    background-color: #F9F9F9; /* White background color */
+    padding: 15px; /* Some padding */
+}
+
